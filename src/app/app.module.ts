@@ -4,10 +4,10 @@ import { HttpClientModule } from '@angular/common/http'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ScoreComponent } from './components/score/score.component';
+import { ScoreComponent } from './components/board/score/score.component';
 import { BoardComponent } from './components/board/board.component';
-import { CardComponent } from './components/card/card.component';
-import { WelcomeComponent } from './welcome/welcome.component';
+import { CardComponent } from './components/board/card/card.component';
+import { WelcomeComponent } from './components/welcome/welcome.component';
 import { ImageService } from './services/image/image.service';
 
 @NgModule({

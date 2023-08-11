@@ -1,7 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ImageService } from './services/image/image.service';
-import { IPicture } from './models/Image.model';
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -9,14 +6,9 @@ import { IPicture } from './models/Image.model';
 })
 export class AppComponent implements OnInit{
 
-  pictures: Array<IPicture> = []
 
-  constructor(private imageService: ImageService){}
+  constructor(){}
   
   ngOnInit(){
-    this.imageService.getImages().subscribe( (response: Array<IPicture>) => {
-      console.log("res", response)
-      this.pictures = response
-    })
   }
 }

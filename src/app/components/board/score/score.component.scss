@@ -1,0 +1,24 @@
+.game-score {
+  display: inline-block;
+  margin: 0 20px;
+  text-align: center;
+}
+
+.game-score__label {
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.game-score__count {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-top: 5px;
+}
+
+.game-score__count--success {
+  color: #2ecc71; /* Verde para los aciertos */
+}
+
+.game-score__count--error {
+  color: #e74c3c; /* Rojo para los errores */
+}
