@@ -1,6 +1,4 @@
-<div class="card card--custom" *ngIf="picture">
-  <img [src]="picture.url" class="card__img" [alt]="picture.title">
-  <!--div-- class="card-body">
-    <p class="card-text">{{ picture.title ? picture.title : 'Animal salvaje' }}</p>
-  </div-->
+<div class="card card--custom" *ngIf="card">
+  <img *ngIf="card.status === cardStatus.Flipped || card.status === cardStatus.Matched" [src]="card.picture.url" class="card__img" [alt]="card.picture.title">
+  <img *ngIf="card.status === cardStatus.Hidden" class="card__img" src="/assets/question-mark-vector-icon.jpg">
 </div>

@@ -1,1 +1,6 @@
-<p>welcome works!</p>
+<div class="row">
+  <div class="col">
+    <input #userName type="text" class="form-control" placeholder="Escribe tu nombre para comenzar" (keyup.enter)="onSubmitUser(userName.value)" >
+    <button (click)="onSubmitUser(userName.value)" class="btn btn-primary">¡Iniciar!</button>
+  </div>
+</div>

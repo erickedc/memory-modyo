@@ -1,4 +1,4 @@
-<div class="container-fluid">
-  <h1>Juego del tablero</h1>
-  <board></board>
+<div class="container">
+  <welcome *ngIf="!user"></welcome>
+  <board *ngIf="user"></board>
 </div>

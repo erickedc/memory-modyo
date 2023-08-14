@@ -9,6 +9,7 @@ import { BoardComponent } from './components/board/board.component';
 import { CardComponent } from './components/board/card/card.component';
 import { WelcomeComponent } from './components/welcome/welcome.component';
 import { ImageService } from './services/image/image.service';
+import { LocalService } from './services/local/local.service';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,7 @@ import { ImageService } from './services/image/image.service';
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [ImageService],
+  providers: [ImageService, LocalService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

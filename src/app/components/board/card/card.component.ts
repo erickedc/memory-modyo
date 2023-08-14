@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { IPicture } from 'src/app/models/Image.model';
+import { CardStatus, ICard } from 'src/app/models/game.model';
 
 @Component({
   selector: 'card',
@@ -7,9 +7,6 @@ import { IPicture } from 'src/app/models/Image.model';
   styleUrls: ['./card.component.scss']
 })
 export class CardComponent {
-  @Input() picture!: IPicture
-
-  constructor(){
-
-  }
+  @Input() card!: ICard
+  cardStatus = CardStatus
 }

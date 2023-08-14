@@ -1,4 +1,4 @@
-<score></score>
+<score [losses]="losses" [wins]="wins"></score>
 <div class="d-flex flex-wrap">
-  <card *ngFor="let picture of pictures" [picture]="picture"></card>
+  <card *ngFor="let card of cards" [card]="card" (click)="flipCard(card)"></card>
 </div>

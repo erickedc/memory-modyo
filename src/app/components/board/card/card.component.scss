@@ -1,21 +1,21 @@
 :host {
-  width: 200px; 
-  height: 200px;
+  width: 150px; 
+  height: 150px;
 }
 .card--custom {
-  width: 18rem;
-  border: 2px solid #3498db;
-  border-radius: 10px;
   overflow: hidden;
   transition: box-shadow 0.3s ease;
+
+  &:hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
 }
 
-.card--custom:hover {
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+.card--hiden {
+  background-color: #3498db;
 }
-
 .card__img {
-  width: 200px; 
-  height: 200px;
+  width: 150px; 
+  height: 150px;
   display: block;
 }

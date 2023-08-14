@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LocalService } from './services/local/local.service';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -6,9 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppComponent implements OnInit{
 
-
-  constructor(){}
+  user: string | null = null
+  constructor(private localService: LocalService){}
   
   ngOnInit(){
+    this.localService.userName$.subscribe((user) => {
+      this.user = user
+    })
   }
 }
