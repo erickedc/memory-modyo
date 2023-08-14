@@ -1,27 +1,39 @@
-# MemoryGame
+# Memory Game Project
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.0.
+This is a simple Memory Game project built using Angular. The game allows users to play the classic Concentration or Memory card game.
 
-## Development server
+## Getting Started
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+To run this project locally, follow these steps:
 
-## Code scaffolding
+1. Clone the repository:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+   git clone https://github.com/your-username/memory-game.git
+   cd memory-game
 
-## Build
+2. Install Dependencies:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+   Make sure you have Node.js installed. Then, install the project's dependencies:
 
-## Running unit tests
+   npm install
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+3. Run the Development Server:
 
-## Running end-to-end tests
+   Run the following command to start the development server:
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+   ng serve
 
-## Further help
+   The app will be available at http://localhost:4200/.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Usage
+
+1. Open your web browser and navigate to http://localhost:4200/.
+2. Enter your username to start the Memory Game.
+3. Play the Memory Game by flipping pairs of cards to find matching pairs.
+4. The game keeps track of your correct and wrong guesses.
+5. When all pairs are matched, a congratulatory message will appear.
+
+## Technologies Used
+
+- Angular
+- Bootstrap 5
