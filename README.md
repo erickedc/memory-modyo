@@ -8,20 +8,24 @@ To run this project locally, follow these steps:
 
 1. Clone the repository:
 
-   git clone https://github.com/your-username/memory-game.git
-   cd memory-game
-
+   ```sh
+   git clone https://github.com/erickedc/memory-modyo.git
+   ```
 2. Install Dependencies:
 
    Make sure you have Node.js installed. Then, install the project's dependencies:
 
+   ```sh
    npm install
-
+   ```
+   
 3. Run the Development Server:
 
    Run the following command to start the development server:
 
+   ```sh
    ng serve
+   ```
 
    The app will be available at http://localhost:4200/.
 
