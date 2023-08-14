@@ -1,4 +1,4 @@
 <div class="container">
   <welcome *ngIf="!user"></welcome>
-  <board *ngIf="user"></board>
+  <board *ngIf="user" [user]="user"></board>
 </div>

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { IPicture } from 'src/app/models/Image.model';
 import { ICard, CardStatus } from 'src/app/models/game.model';
 import { ImageService } from 'src/app/services/image/image.service';
@@ -8,8 +8,9 @@ import { ImageService } from 'src/app/services/image/image.service';
   templateUrl: './board.component.html',
   styleUrls: ['./board.component.scss']
 })
-export class BoardComponent implements OnInit{
+export class BoardComponent implements OnInit {
 
+  @Input() user!: string
   cards: ICard[] = []
   flippedCards: ICard[] = [];
 
@@ -17,16 +18,22 @@ export class BoardComponent implements OnInit{
   losses = 0;
   isGameOver = false;
 
-  constructor(private imageService: ImageService){}
+  constructor(private imageService: ImageService) { }
   ngOnInit(): void {
-    this.imageService.getImages().subscribe( (response: Array<IPicture>) => {
-      const duplicatedPictures = [...response, ...response]
+    this.initGame()
+  }
+
+  initGame(): void {
+    this.imageService.getImages().subscribe((response: Array<IPicture>) => {
+      this.shuffleArray(response)
+      const filteredResponse = response.splice(0, 10)
+      let duplicatedPictures = [...filteredResponse, ...filteredResponse]
       this.shuffleArray(duplicatedPictures)
-      this.cards = duplicatedPictures.map(card => ({status: CardStatus.Hidden, picture: card, id: card.uuid }))
+      this.cards = duplicatedPictures.map(card => ({ status: CardStatus.Hidden, picture: card, id: card.uuid }))
     })
   }
 
-  flipCard(card: ICard){
+  flipCard(card: ICard) {
     if (this.flippedCards.length < 2 && card.status === CardStatus.Hidden) {
       card.status = CardStatus.Flipped;
       this.flippedCards.push(card);
@@ -46,15 +53,15 @@ export class BoardComponent implements OnInit{
     ) {
       this.flippedCards.forEach(card => (card.status = CardStatus.Matched));
       this.wins++;
-      this.checkGameEnd();
     } else {
       this.flippedCards.forEach(card => (card.status = CardStatus.Hidden));
       this.losses++;
     }
+    this.checkGameEnd();
   }
 
   checkGameEnd(): void {
-    if (this.wins === this.cards.length / 2) {
+    if (this.wins * 2 === this.cards.length) {
       this.isGameOver = true;
     }
   }
@@ -64,5 +71,14 @@ export class BoardComponent implements OnInit{
       const j = Math.floor(Math.random() * (i + 1));
       [array[i], array[j]] = [array[j], array[i]];
     }
+  }
+
+  restartGame(): void{
+    this.cards = []
+    this.wins = 0
+    this.losses = 0
+    this.flippedCards = []
+    this.isGameOver = false
+    this.initGame()
   }
 }
