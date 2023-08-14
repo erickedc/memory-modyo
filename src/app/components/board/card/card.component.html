@@ -1,4 +1,10 @@
-<div class="card card--custom" *ngIf="card">
-  <img *ngIf="card.status === cardStatus.Flipped || card.status === cardStatus.Matched" [src]="card.picture.url" class="card__img" [alt]="card.picture.title">
-  <img *ngIf="card.status === cardStatus.Hidden" class="card__img" src="/assets/question-mark-vector-icon.jpg">
+<div class="card__container">
+  <div class="card__custom" [ngClass]="{'card__custom--is-flipped': card.status === cardStatus.Flipped}" *ngIf="card">
+    <img [src]="card.picture.url" class="card__face--front" [alt]="card.picture.title">
+    <div class="card__face--back">
+      <div class="d-flex w-100 h-100 text-center justify-content-center">
+        <p class="w-100">?</p>
+      </div>
+    </div>
+  </div>
 </div>

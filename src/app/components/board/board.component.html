@@ -1,10 +1,9 @@
 <score [losses]="losses" [wins]="wins"></score>
-<div *ngIf="!isGameOver" class="d-flex flex-wrap">
-  <card *ngFor="let card of cards" [card]="card" (click)="flipCard(card)"></card>
+<div *ngIf="!isGameOver" class="section-border d-flex flex-wrap justify-content-center my-2 py-2">
+  <card class="m-2" *ngFor="let card of cards" [card]="card" (click)="flipCard(card)"></card>
 </div>
-<div *ngIf="isGameOver">
-  ¡Juego terminado!
-  Haz {{ wins > losses ? 'ganado' : 'perdido'}}, {{ user }}
-
-  <button class="btn btn-primary" (click)="restartGame()"> Reiniciar el juego</button>
+<div class="section-border d-flex flex-column text-center py-3" *ngIf="isGameOver">
+  <h1>¡Juego terminado!</h1>
+  <h2>🎉😁¡Enhorabuena {{user}}!😁🎉</h2>
+  <button class="btn btn-primary w-25 align-self-center my-4" (click)="restartGame()"> Reiniciar el juego</button>
 </div>

@@ -15,4 +15,8 @@ export class AppComponent implements OnInit{
       this.user = user
     })
   }
+
+  switchUser(){
+    this.localService.clear()
+  }
 }

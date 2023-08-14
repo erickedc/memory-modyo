@@ -1,0 +1,13 @@
+@import './../styles';
+div.container-fluid {
+  font-family: 'Open Sans', sans-serif;
+  background-color: $background;
+  .switch-user{
+    font-size: 1.1rem;
+    text-decoration: underline;
+    cursor: pointer;
+    &:hover{
+      color: $text-primary;
+    }
+  }
+}

@@ -1,6 +1,8 @@
-<div class="row">
-  <div class="col">
-    <input #userName type="text" class="form-control" placeholder="Escribe tu nombre para comenzar" (keyup.enter)="onSubmitUser(userName.value)" >
-    <button (click)="onSubmitUser(userName.value)" class="btn btn-primary">¡Iniciar!</button>
+<div class="welcome-container container-md">
+  <div class="d-flex flex-column h-100 justify-content-center align-items-center">
+    <h1>Bienvenido a <b>¡Memory Game!</b></h1>
+    <input #userName type="text" class="form-control w-50 my-2" placeholder="Escribe tu nombre para comenzar" (keyup.enter)="onSubmitUser(userName.value)" >
+    <span class="text-danger" *ngIf="error">Asegúrate de escribir tu nombre para comenzar :)</span>
+    <button (click)="onSubmitUser(userName.value)" class="btn btn-primary w-25 my-2">¡Comenzar!</button>
   </div>
 </div>

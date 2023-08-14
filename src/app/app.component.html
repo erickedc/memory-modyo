@@ -1,4 +1,7 @@
-<div class="container">
+<div class="container-fluid">
   <welcome *ngIf="!user"></welcome>
   <board *ngIf="user" [user]="user"></board>
+  <div *ngIf="user" class="d-flex w-100 my-2">
+    <span (click)="switchUser()" class="switch-user">¿Quieres cambiar de usuario?</span>
+  </div>
 </div>
